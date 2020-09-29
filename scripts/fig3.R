@@ -5,7 +5,7 @@ library(zoo)
 library(ggsci)
 library(EpiNow2)
 
-main_wd <- "~/Documents/GitHub/ct_inference_preprint/"
+main_wd <- "~/Documents/GitHub/ct_dynamics_preprint/"
 setwd(main_wd)
 
 rerun <- FALSE
@@ -208,5 +208,5 @@ p2 <- bwh_data_use %>%
 main_p <- p1/p2/(pA|pB|pC)
 main_p
 
-ggsave("figs/brigham_data_daily_firstpos.png",main_p,
-       width=8,height=8,units="in")
+#ggsave("figs/brigham_data_daily_firstpos.png",main_p,
+#       width=8,height=8,units="in")

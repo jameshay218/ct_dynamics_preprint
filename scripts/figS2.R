@@ -1,5 +1,5 @@
 
-setwd("~/Documents/GitHub/ct_inference_preprint/")
+setwd("~/Documents/GitHub/ct_dynamics_preprint/")
 
 #### Pulls in functions and data from the Fig 1 generation (note: takes some time to run): ####
 source("scripts/fig1.R")

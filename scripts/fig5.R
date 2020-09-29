@@ -14,7 +14,7 @@ library(dde)
 
 set.seed(7)
 
-main_wd <- "~/Documents/GitHub/ct_inference_preprint/"
+main_wd <- "~/Documents/GitHub/ct_dynamics_preprint/"
 setwd(main_wd)
 
 source("code/model_funcs.R")

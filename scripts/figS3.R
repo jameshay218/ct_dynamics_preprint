@@ -14,7 +14,7 @@ library(dde)
 
 set.seed(1234)
 
-main_wd <- "~/Documents/GitHub/ct_inference_preprint/"
+main_wd <- "~/Documents/GitHub/ct_dynamics_preprint/"
 setwd(main_wd)
 
 ## File management

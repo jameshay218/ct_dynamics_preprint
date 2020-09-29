@@ -15,7 +15,7 @@ library(optimx)
 ## CHANGE TO MAIN WD
 ## Important to set this to the full file path, as on L205 the foreach loop must move to the correct working directory to source the model functions
 #main_wd <- "~/Documents/Harvard/Research/Infectious Diseases/COVID-19/PCR Cts/Code & Results/ct_inference"
-main_wd <- "~/Documents/GitHub/ct_inference_preprint/"
+main_wd <- "~/Documents/GitHub/ct_dynamics_preprint/"
 setwd(main_wd)
 
 source("code/model_funcs.R")
