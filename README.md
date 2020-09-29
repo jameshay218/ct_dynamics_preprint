@@ -1,4 +1,4 @@
-# ct_inference_preprint
+# ct_dynamics_preprint
  Code required to regenerate the figures and analyses in Hay & Kennedy-Shaffer et al.
 
 ## General framework
