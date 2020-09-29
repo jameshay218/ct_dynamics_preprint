@@ -1,0 +1,11 @@
+values,names,fixed,lower_bound,upper_bound,steps,lower_start,upper_start
+0.1,beta,1,-0.5,0.5,0.1,-0.2,0.2
+2,tshift,0,0,3,0.1,0,10
+4,desired_mode,0,3,7,0.1,0,10
+39.06993102684277,gamma_sd,0,0,50,0.1,2,20
+6.83838714986206,viral_peak,0,0,25,0.1,2,10
+6.812902517116191,obs_sd,0,0,10,0.1,1,10
+-7.853026953641081,true_0,0,-10,0,0.1,-10,0
+40,intercept,1,0,100,0.1,0,100
+3,LOD,1,0,10,0.1,0,10
+2,limit_quantification,1,0,10,0.1,0,10

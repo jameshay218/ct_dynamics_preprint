@@ -1,0 +1,12 @@
+﻿values,names,fixed,lower_bound,upper_bound,steps,lower_start,upper_start
+0.1,beta,0,-0.5,0.5,0.1,-0.2,0.2
+0,tshift,0,0,3,0.1,0,10
+4,desired_mode,0,3,7,0.1,0,10
+8,viral_peak,0,0,25,0.1,2,10
+1,obs_sd,0,0,10,0.1,1,10
+-5,true_0,0,-10,0,0.1,-10,0
+40,intercept,1,0,100,0.1,0,100
+0,LOD,1,0,10,0.1,0,10
+2,limit_quantification,1,0,10,0.1,0,10
+5,incu,1,0,10,0.1,0,10
+20,t_wane,0,0,30,0.1,10,30
