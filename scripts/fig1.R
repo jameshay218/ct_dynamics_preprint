@@ -10,10 +10,10 @@ require(ggthemes)
 require(extraDistr)
 require(mvtnorm)
 
+setwd("~/Documents/GitHub/ct_dynamics_preprint/")
 source("code/simulation_functions.R")
 source("code/model_funcs.R")
 
-setwd("~/Documents/GitHub/ct_dynamics_preprint/")
 
 cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
@@ -316,7 +316,7 @@ for (i in 1:(dim(CtDF)[1])) { ## Assigns [sample_n] points to VLs and test days 
 }
 
 CtMeds <- data.frame(Days=0:199, Median=Ct_median)
-CtMeds$Value <- -1*DF.h.2$Median/100+.3
+CtMeds$Value <- -1*CtMeds$Median/100+.3
 
 Ct_distns <- Ct_res_std[vertvals+1,]
 CtDF.hist <- NULL
@@ -370,18 +370,21 @@ p.d.violin <-
   geom_vline(xintercept=vertvals, col=cbbPalette[8], lty="dashed") + 
   scale_x_continuous(limits=c(25,175), breaks=seq(25,175,by=25)) 
 
-ggsave(filename="figs/fig1.png",
-       plot=p.a+labs(title=NULL, tag="A")+theme(plot.tag.position="topleft", legend.position=c(.85,.75), legend.direction="vertical") +
-         p.b+labs(title=NULL, tag="B")+theme(plot.tag.position="topleft") +
-         p.c+labs(title=NULL, tag="C")+theme(plot.tag.position="topleft") +
-         p.d+labs(title=NULL, tag="D")+theme(plot.tag.position="topleft") +
-         plot_layout(guides="keep", ncol=1, nrow=4),
-       width=8, height=12, units="in", dpi=400)
+  if(FALSE){
+  ggsave(filename="figs/fig1.png",
+         plot=p.a+labs(title=NULL, tag="A")+theme(plot.tag.position="topleft", legend.position=c(.85,.75), legend.direction="vertical") +
+           p.b+labs(title=NULL, tag="B")+theme(plot.tag.position="topleft") +
+           p.c+labs(title=NULL, tag="C")+theme(plot.tag.position="topleft") +
+           p.d+labs(title=NULL, tag="D")+theme(plot.tag.position="topleft") +
+           plot_layout(guides="keep", ncol=1, nrow=4),
+         width=8, height=12, units="in", dpi=400)
+  
+  ggsave(filename="figs/fig1_violins.png",
+         plot=p.a+labs(title=NULL, tag="A")+theme(plot.tag.position="topleft", legend.position=c(.85,.75), legend.direction="vertical") +
+           p.b+labs(title=NULL, tag="B")+theme(plot.tag.position="topleft") +
+           p.c.violin+labs(title=NULL, tag="C")+theme(plot.tag.position="topleft") +
+           p.d.violin+labs(title=NULL, tag="D")+theme(plot.tag.position="topleft") +
+           plot_layout(guides="keep", ncol=1, nrow=4),
+         width=8, height=12, units="in", dpi=400)
+  }
 
-ggsave(filename="figs/fig1_violins.png",
-       plot=p.a+labs(title=NULL, tag="A")+theme(plot.tag.position="topleft", legend.position=c(.85,.75), legend.direction="vertical") +
-         p.b+labs(title=NULL, tag="B")+theme(plot.tag.position="topleft") +
-         p.c.violin+labs(title=NULL, tag="C")+theme(plot.tag.position="topleft") +
-         p.d.violin+labs(title=NULL, tag="D")+theme(plot.tag.position="topleft") +
-         plot_layout(guides="keep", ncol=1, nrow=4),
-       width=8, height=12, units="in", dpi=400)

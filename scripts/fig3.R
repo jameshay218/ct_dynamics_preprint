@@ -36,7 +36,7 @@ p1 <- nyt_dat %>%
   #scale_fill_npg() +
   scale_fill_manual(values=c("grey40","darkred")) +
   scale_y_continuous(expand=c(0,0),limits=c(0,5000)) +
-  scale_x_date(limits=as.Date(c("2020-03-01", "2020-09-01"), "%Y-%m-%d"), breaks="7 days") +
+  scale_x_date(limits=as.Date(c("2020-04-01", "2020-09-01"), "%Y-%m-%d"), breaks="7 days") +
   theme_classic()+
   theme(legend.position="none",
         panel.grid.minor=element_blank(),
@@ -52,7 +52,7 @@ p1
 ## Rt estimation on these case counts
 rt_dat <- nyt_dat %>% 
   ungroup() %>%
-  select(date, new_cases) %>%
+  dplyr::select(date, new_cases) %>%
   drop_na() %>%
   rename(I=new_cases,
          dates=date)
@@ -96,12 +96,13 @@ p1 <- p1 +
   geom_ribbon(data=dat_infections,aes(x=date,ymin=bottom,ymax=top),
               fill="red",alpha=0.5) +
   geom_line(data=dat_infections,aes(x=date,y=mean),col="red") +
+  geom_hline(yintercept=1000) +
   geom_ribbon(data=rt_dat,aes(x=date,ymin=bottom*coeff,ymax=top*coeff),
               fill="darkgreen",alpha=0.5) +
   geom_line(data=rt_dat,aes(x=date,y=mean*coeff)) +
   scale_y_continuous(expand=c(0,0),limits=c(0,5000),
                      sec.axis=sec_axis(~.*1/coeff, name="Rt"))
-
+p1
 
 ## Plot Ct data
 bwh_data <- read_csv("data/BWH_COVID_Cts_deid_20200403-20200831.csv")
